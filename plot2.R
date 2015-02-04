@@ -10,6 +10,10 @@ first_fri <- min(which(weekdays == "Fri"))
 first_sat <- max(which(weekdays == "Fri"))
 x_ticks <- c(first_thu, first_fri, first_sat)
 
+png("plot2.png")
+
 plot(data_sub$Global_active_power , type = "n", xaxt = "n", xlab= "", ylab = "Global Active Power (kilowatts)")
 lines(data_sub$Global_active_power)
 axis(1, labels = c("Thu", "Fri", "Sat"), at = x_ticks)
+
+dev.off()

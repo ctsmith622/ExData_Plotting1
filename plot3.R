@@ -10,9 +10,14 @@ first_fri <- min(which(weekdays == "Fri"))
 first_sat <- max(which(weekdays == "Fri"))
 x_ticks <- c(first_thu, first_fri, first_sat)
 
+
+png("plot3.png")
+
 plot(data_sub$Sub_metering_1 , type = "n", xaxt = "n", xlab= "", ylab = "Energy sub metering")
 lines(data_sub$Sub_metering_1)
 lines(data_sub$Sub_metering_2, col="red")
 lines(data_sub$Sub_metering_3, col="blue")
 axis(1, labels = c("Thu", "Fri", "Sat"), at = x_ticks)
 legend("topright", xpd = T, legend = c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"), col =c("black", "red", "blue"), lty = 1)
+
+dev.off()
