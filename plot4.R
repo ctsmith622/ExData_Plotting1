@@ -10,7 +10,8 @@ first_fri <- min(which(weekdays == "Fri"))
 first_sat <- max(which(weekdays == "Fri"))
 x_ticks <- c(first_thu, first_fri, first_sat)
 
-par(mfrow=c(1,1))
+
+png("plot4.png")
 par(mfrow=c(2,2))
 
 #plot 1
@@ -35,3 +36,5 @@ legend("topright", bty = "n", legend = c("Sub_metering_1","Sub_metering_2", "Sub
 plot(data_sub$Global_reactive_power , type = "n", xaxt = "n", ylab = "Global_reactive_power", xlab="datetime")
 lines(data_sub$Global_reactive_power)
 axis(1, labels = c("Thu", "Fri", "Sat"), at = x_ticks)
+
+dev.off()
