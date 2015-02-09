@@ -1,4 +1,4 @@
-#assume the file as been dowloaded and unzipped into the working directory
+#assume the file has been dowloaded and unzipped into the working directory
 
 data <- read.table("household_power_consumption.txt", header = T, sep = ";", na.strings = "?", nrows = 2075259, stringsAsFactors = F)
 data$Date <- strptime(data$Date, format = "%d/%m/%Y")
